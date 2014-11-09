@@ -20,7 +20,7 @@ DeskTopSize 3x1
 DesktopName 0 Main
 DesktopName 1 Mikasa
 EdgeScroll 100 100
-EdgeResistance 150  150
+EdgeResistance 360  360
 EdgeThickness 1
 ClickTime 350
 MoveThreshold 3
@@ -250,10 +250,10 @@ AddToMenu MenuFvwmRoot
 
 #============== FvwmBacker ==============
 
-AddToFunc   StartFunction  I   FvwmBacker
-*FvwmBacker:Command(Desk 1,Page 0 0) Exec feh --bg-scale $[walldir]/1.jpg
-*FvwmBacker:Command(Desk 1,Page 1 0) Exec feh --bg-scale $[walldir]/2.jpg
-*FvwmBacker:Command(Desk 1,Page 2 0) Exec feh --bg-scale $[walldir]/3.jpg
+#AddToFunc   StartFunction  I   FvwmBacker
+#*FvwmBacker:Command(Desk 1,Page 0 0) Exec feh --bg-scale $[walldir]/1.jpg
+#*FvwmBacker:Command(Desk 1,Page 1 0) Exec feh --bg-scale $[walldir]/2.jpg
+#*FvwmBacker:Command(Desk 1,Page 2 0) Exec feh --bg-scale $[walldir]/3.jpg
 
 #============== FvwmEvent ===============
 
@@ -285,8 +285,8 @@ AddToFunc MoveFunc
 
 DestroyFunc Mikasa
 AddToFunc Mikasa
-+ I SetEnv FVWM_DESK $[desk.n]
-+ I Test (EnvMatch FVWM_DESK 1) Exec feh --bg-scale $[walldir]/gou.png
+#+ I SetEnv FVWM_DESK $[desk.n]
+#+ I Test (EnvMatch FVWM_DESK 1) Exec feh --bg-scale $[walldir]/gou.png
 + I GotoDesk 1 0 1
 
 #================ Mouse ================
@@ -310,6 +310,7 @@ Key Up       A       M       GoToPage wrapx  1p 1
 Key Down     A       M       GoToPage wrapx  1p 1
 Key Q        A       4       Exec thunar
 Key W        A       4       Exec firefox
+Key W        A       4S      Exec google-chrome-stable
 Key P        A       C       Exec exec scrot -e 'mv $f Picture'
 #Key P        A       4       Exec exec scrot -s -e 'mv $f Picture'
 Key S        A       M       FvwmRearrange -tile -u -mn 2 -resize -m 0 0 100 84
