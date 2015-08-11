@@ -35,10 +35,10 @@ DestroyFunc InitFunction
 AddToFunc   InitFunction
 #+ I Exec exec fvwm-root -r $[walldir]/gou.png
 + I Exec feh --bg-scale $[walldir]/gou.png
-+ I Exec exec xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4
+#+ I Exec exec xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4
 + I Exec exec fcitx
 + I Exec exec conky
-+ I Exec exec tilda
+#+ I Exec exec tilda
 
 DestroyFunc StartFunction
 AddToFunc StartFunction
@@ -303,11 +303,13 @@ Key Q        A       M       Iconify
 Key W        A       M       Maximize
 Key Tab      A       4       Mikasa
 Key Tab      A       M       WindowList Root c c NoCurrentDeskTitle
-Key 1        A       M       MoveToPage 0 0
-Key 2        A       M       MoveToPage 1 0
-Key 3        A       M       MoveToPage 2 0
-Key Up       A       M       GoToPage wrapx  1p 1
-Key Down     A       M       GoToPage wrapx  1p 1
+Key 1        A       C       MoveToPage 0 0
+Key 2        A       C       MoveToPage 1 0
+Key 3        A       C       MoveToPage 2 0
+Key 1        A       4       GoToPage 0 0
+Key 2        A       4       GoToPage 1 0
+Key 3        A       4       GoToPage 2 0
+Key H        A       M       GoToPage wrapx  1p 1
 Key Q        A       4       Exec thunar
 Key W        A       4       Exec firefox
 Key W        A       4S      Exec google-chrome-stable
